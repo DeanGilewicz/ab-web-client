@@ -1,0 +1,7 @@
+.modal-remove-book-author-content p {
+	margin: 0;
+}
+
+.modal-remove-book-author-content .action-container {
+	margin-top: calc(var(--spacing-margin) * 3);
+}

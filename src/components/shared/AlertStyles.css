@@ -1,0 +1,23 @@
+.alert {
+	position: fixed;
+	max-width: 240px;
+	bottom: calc(var(--spacing-margin) * 2);
+	right: var(--spacing-margin);
+	transform: translateX(calc(100% + var(--spacing-margin)));
+	transition: transform 0.2s ease-in-out 0.3s;
+}
+
+.alert.alert-active {
+	transform: translateX(0);
+}
+
+.alert .alert-content {
+	display: flex;
+	align-items: center;
+	padding: var(--spacing-padding);
+	border-radius: var(--border-radius);
+}
+
+.alert .alert-content button {
+	margin-left: calc(var(--spacing-margin) * 2);
+}

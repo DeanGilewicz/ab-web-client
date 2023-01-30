@@ -1,0 +1,74 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy on SCALAR
+type Query {
+  authors(filter: AuthorFilter!, sortBy: AuthorSortType): [Author!]!
+  author(id: ID!): Author!
+  books: [Book!]!
+  book(id: ID!): Book!
+  test: String
+}
+type Mutation {
+  addAuthor(input: AuthorInput!): Author!
+  updateAuthor(input: AuthorInput!): Author!
+  deleteAuthor(input: AuthorDeleteInput!): AuthorDeleteResult!
+  deleteAuthorBooks(input: AuthorBookInput!): Author!
+  addBook(input: BookInput!): Book!
+  updateBook(input: BookInput!): Book!
+  deleteBook(input: BookDeleteInput!): BookDeleteResult!
+  removeBookAuthor(input: BookAuthorInput!): Book!
+}
+type Author {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  books: [Book!]
+}
+type AuthorDeleteResult {
+  id: ID!
+}
+input AuthorInput {
+  id: ID
+  firstName: String
+  lastName: String
+  bookIds: [ID!]
+}
+input AuthorBookInput {
+  id: ID!
+  bookIds: [ID!]!
+}
+input AuthorFilter {
+  id: [ID!]
+  firstName: [String!]
+  lastName: [String!]
+  bookIds: [ID!]
+}
+input AuthorDeleteInput {
+  id: ID!
+}
+type Book {
+  id: ID!
+  title: String!
+  author: Author
+}
+type BookDeleteResult {
+  id: ID!
+}
+input BookInput {
+  id: ID
+  title: String
+  authorId: ID
+}
+input BookDeleteInput {
+  id: ID!
+}
+input BookAuthorInput {
+  id: ID!
+}
+enum AuthorSortType {
+  ASC
+  DESC
+}

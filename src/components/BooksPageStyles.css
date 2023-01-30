@@ -1,0 +1,41 @@
+.books-page h2 {
+	margin-bottom: calc(var(--spacing-margin) * 3);
+	text-transform: uppercase;
+}
+
+.books-page-actions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.books-page-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-template-rows: minmax(160px, 1fr);
+	grid-auto-rows: minmax(160px, 1fr);
+	gap: var(--spacing-margin);
+	margin-top: calc(var(--spacing-margin) * 3);
+}
+
+.books-page-cards article {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: var(--spacing-padding);
+	padding-bottom: var(--spacing-padding);
+	border-radius: var(--border-radius);
+	background-color: var(--color-blue);
+}
+
+.books-page-cards p {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: calc(var(--spacing-margin) * 2) 0;
+	padding: calc(var(--spacing-padding) * 2);
+}
+
+.books-page-cards a {
+	text-transform: uppercase;
+	color: var(--color-gray-light);
+}

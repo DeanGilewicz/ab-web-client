@@ -1,0 +1,124 @@
+{
+	"name": "client",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@apollo/client": "^3.6.1",
+		"graphql": "^16.4.0",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0",
+		"react-router-dom": "^6.3.0",
+		"react-scripts": "5.0.1",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"test:coverage": "npm run test -- --coverage --watchAll=false",
+		"eject": "react-scripts eject",
+		"graphql-download": "npm_config_yes=true npx -p @apollo/rover@0.1.10 rover graph introspect https://<example.com>/graphql > schema.graphql",
+		"graphql-download-local": "npm_config_yes=true npx -p @apollo/rover@0.1.10 rover graph introspect http://localhost:8080/graphql > schema.graphql",
+		"graphql-codegen": "graphql-codegen --config graphql-codegen.yml",
+		"storybook": "start-storybook -p 6006 -s public",
+		"test-storybook:coverage": "test-storybook --coverage",
+		"build-storybook": "build-storybook -s public",
+		"test:e2e": "playwright test --config=./playwright.config.ts",
+		"test:e2e:watch": "playwright-watch exec npm run test:e2e"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		],
+		"overrides": [
+			{
+				"files": [
+					"**/*.stories.*"
+				],
+				"rules": {
+					"import/no-anonymous-default-export": "off"
+				}
+			},
+			{
+				"files": [
+					"**/*.spec.*"
+				],
+				"rules": {
+					"testing-library/prefer-screen-queries": "off"
+				}
+			}
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@graphql-codegen/add": "^3.2.1",
+		"@graphql-codegen/cli": "^2.13.7",
+		"@graphql-codegen/typescript": "^2.7.4",
+		"@graphql-codegen/typescript-operations": "^2.5.4",
+		"@graphql-codegen/typescript-react-apollo": "^3.3.4",
+		"@playwright/test": "^1.29.2",
+		"@storybook/addon-actions": "^6.5.15",
+		"@storybook/addon-coverage": "^0.0.7",
+		"@storybook/addon-essentials": "^6.5.15",
+		"@storybook/addon-interactions": "^6.5.15",
+		"@storybook/addon-links": "^6.5.15",
+		"@storybook/builder-webpack5": "^6.5.15",
+		"@storybook/jest": "^0.0.10",
+		"@storybook/manager-webpack5": "^6.5.15",
+		"@storybook/node-logger": "^6.5.15",
+		"@storybook/preset-create-react-app": "^4.1.2",
+		"@storybook/react": "^6.5.15",
+		"@storybook/test-runner": "^0.6.4",
+		"@storybook/testing-library": "^0.0.13",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/react": "^13.3.0",
+		"@testing-library/user-event": "^14.2.1",
+		"@types/jest": "^28.1.3",
+		"@types/mdx": "^2.0.3",
+		"@types/node": "^18.0.0",
+		"@types/react": "^18.0.14",
+		"@types/react-dom": "^18.0.5",
+		"babel-plugin-named-exports-order": "^0.0.2",
+		"history": "^5.3.0",
+		"playwright": "^1.29.2",
+		"playwright-watch": "^1.3.23",
+		"prop-types": "^15.8.1",
+		"storybook-addon-apollo-client": "^4.0.13",
+		"typescript": "^4.7.4",
+		"webpack": "^5.75.0"
+	},
+	"jest": {
+		"resetMocks": true,
+		"restoreMocks": true,
+		"collectCoverageFrom": [
+			"src/App.tsx",
+			"src/components/**/*.{js,jsx,ts,tsx}",
+			"!<rootDir>/node_modules/"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 90,
+				"functions": 90,
+				"lines": 90,
+				"statements": 90
+			}
+		},
+		"coverageReporters": [
+			"text",
+			"text-summary",
+			"lcov"
+		]
+	}
+}
