@@ -1,0 +1,40 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	max-width: 1440px;
+	height: 100vh;
+	margin: 0 auto;
+	padding: calc(var(--spacing-margin) * 2);
+	text-align: center;
+}
+
+.app-header {
+	padding-bottom: calc(var(--spacing-margin) * 2);
+}
+
+.app-header ul {
+	display: flex;
+	gap: var(--spacing-margin);
+}
+
+.app-header ul li:nth-child(2) {
+	margin-left: auto;
+}
+
+.app-header ul li a {
+	display: block;
+	border: 1px solid var(--color-white);
+	border-radius: var(--spacing-padding);
+	padding: var(--spacing-padding) calc(var(--spacing-padding) * 2);
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--color-white);
+}
+
+.app-footer {
+	margin-top: auto;
+}
+
+.app-footer p {
+	margin-top: calc(var(--spacing-margin) * 2);
+}

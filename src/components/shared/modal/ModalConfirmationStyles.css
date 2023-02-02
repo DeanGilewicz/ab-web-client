@@ -1,0 +1,23 @@
+.modal-confirmation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-overlay-background);
+}
+
+.modal-confirmation-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--color-gray-dark);
+	text-align: center;
+}
+
+.modal-confirmation-content .action-container {
+	margin-top: calc(var(--spacing-margin) * 3);
+}

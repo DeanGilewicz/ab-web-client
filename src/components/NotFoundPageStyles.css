@@ -1,0 +1,3 @@
+.not-found-page .action-container {
+	margin-top: calc(var(--spacing-margin) * 2);
+}

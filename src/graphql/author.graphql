@@ -1,0 +1,33 @@
+query Author($id: ID!) {
+	author(id: $id) {
+		id
+		firstName
+		lastName
+		fullName @client
+		books {
+			id
+			title
+			author {
+				id
+			}
+		}
+	}
+}
+
+mutation updateAuthor($input: AuthorInput!) {
+	updateAuthor(input: $input) {
+		id
+		firstName
+		lastName
+		fullName @client
+		books {
+			id
+			title
+			author {
+				id
+				firstName
+				lastName
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.modal-create-book-content-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-create-book-content label,
+.modal-create-book-content input {
+	color: var(--color-gray-dark);
+}
+
+.modal-create-book-content .input-container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 16px;
+}
+
+.modal-create-book-content .input-container:last-of-type {
+	margin-bottom: 0;
+}
+
+.modal-create-book-content .action-container {
+	margin-top: calc(var(--spacing-margin) * 3);
+	text-align: center;
+}

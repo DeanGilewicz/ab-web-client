@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  - ./schema.graphql
+  - ./schema-local.graphql
+documents: src/**/*.graphql
+sort: false
+generates:
+  src/generated/graphql-types.tsx:
+    config:
+      apolloReactHooksImportFrom: "src/hooks/apolloWrappers"
+    plugins:
+      - add:
+          placement: "prepend"
+          content: "/* eslint-disable */"
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo

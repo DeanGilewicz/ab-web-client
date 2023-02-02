@@ -1,0 +1,10 @@
+.home-page h2 {
+	margin-bottom: var(--spacing-margin);
+}
+
+.home-page p {
+	max-width: 60ch;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}

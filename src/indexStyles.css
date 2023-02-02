@@ -1,0 +1,155 @@
+:root {
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-gray: #a1a1a1;
+	--color-gray-dark: #5b5b5b;
+	--color-gray-light: #e0e0e0;
+	--color-blue: #266df1;
+	--color-green: #2bc42b;
+	--color-red: #ff0000;
+	--color-overlay-background: rgba(0, 0, 0, 0.9);
+	--spacing-margin: 8px;
+	--spacing-padding: 8px;
+	--border-radius: 8px;
+}
+
+@font-face {
+	font-family: "Quicksand";
+	src: local("Quicksand") url("./fonts/Quicksand-Bold.woff2") format("woff2"),
+		url("./fonts/Quicksand-Bold.woff") format("woff"),
+		url("./fonts/Quicksand-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Quicksand";
+	src: local("Quicksand") url("./fonts/Quicksand-SemiBold.woff2")
+			format("woff2"),
+		url("./fonts/Quicksand-SemiBold.woff") format("woff"),
+		url("./fonts/Quicksand-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Quicksand";
+	src: local("Quicksand") url("./fonts/Quicksand-Medium.woff2") format("woff2"),
+		url("./fonts/Quicksand-Medium.woff") format("woff"),
+		url("./fonts/Quicksand-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Quicksand";
+	src: local("Quicksand") url("./fonts/Quicksand-Medium.woff2") format("woff2"),
+		url("./fonts/Quicksand-Medium.woff") format("woff"),
+		url("./fonts/Quicksand-Medium.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Quicksand";
+	src: local("Quicksand") url("./fonts/Quicksand-Light.woff2") format("woff2"),
+		url("./fonts/Quicksand-Light.woff") format("woff"),
+		url("./fonts/Quicksand-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	margin: 0;
+	font-family: "Quicksand", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 1rem;
+	background-color: var(--color-black, #000000);
+	color: var(--color-gray-light);
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.488rem;
+}
+
+h2 {
+	font-size: 2.074rem;
+}
+
+h3 {
+	font-size: 1.728rem;
+}
+
+h4 {
+	font-size: 1.44rem;
+}
+
+h5 {
+	font-size: 1.2rem;
+}
+
+ul {
+	list-style-type: none;
+}
+
+button,
+.button {
+	padding: var(--spacing-padding) calc(var(--spacing-padding) * 2);
+	border-radius: var(--border-radius);
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+button.error,
+.button.error {
+	background-color: var(--color-red);
+	color: var(--color-white);
+}
+
+button.success,
+.button.success {
+	background-color: var(--color-green);
+	color: var(--color-white);
+}
+
+button:disabled,
+.button:disabled {
+	opacity: 0.5;
+}
+
+input,
+select {
+	height: 36px;
+	padding: var(--spacing-padding);
+}
+
+a {
+	display: inline-block;
+}
