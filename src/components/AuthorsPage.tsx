@@ -41,6 +41,7 @@ export function AuthorsPage() {
 		onCompleted(data) {
 			setAuthors(data.authors as Author[]);
 		},
+		fetchPolicy: "network-only",
 	});
 
 	/**
