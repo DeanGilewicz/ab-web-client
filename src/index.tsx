@@ -8,6 +8,8 @@ import "src/indexStyles.css";
 
 import App from "src/App";
 
+const { REACT_APP_API_URL } = process.env;
+
 // const httpLink = new HttpLink({
 // 	uri: "http://localhost:8080/graphql",
 // });
@@ -24,7 +26,7 @@ import App from "src/App";
 // });
 
 const client = new ApolloClient({
-	uri: "http://0.0.0.0:8080/graphql",
+	uri: `${REACT_APP_API_URL}/graphql`,
 	// link: from([errorLink, httpLink]),
 	cache: new InMemoryCache({
 		typePolicies: {

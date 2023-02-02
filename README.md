@@ -359,22 +359,17 @@ The application provides a variety of commands in `package.json`:
 - test:e2e:watch
   - runs Playwright tests in watch mode
 
+<br />
+
+When running `npm run start`, create-react-app runs app in `development` mode. In order to run app in `production` mode run `npm run build` then `npx serve -s build`.
+
+To ensure this app is connected to the correct env API add a `.env.local` file for local / development mode and an `.env.production.local` for production mode. For each file include `REACT_APP_API_URL=<API-endpoint>` before serving app.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-// FIXME: figure out deployment approach
-
-- check FE and BE can communicate locally
-- check FE can communicate to `Fly.io` BE
-  - may need to update `index.tsx` Apollo client to use dynamic `uri` instead of static `http://0.0.0.0:8080/graphql` based on ENV vars
-- FE CI/CD pipeline flow:
-  - use GitHub actions to run lint rules, type checks and tests
-  - maybe use GitHub actions to deploy to netlify? (also may not be needed)
 
 ## CI/CD
 
-The application has been dockerized in order to provide an easier way to manage deployment.
-
-Currently, [GitHub Actions](https://docs.github.com/en/actions) has been set up as the CI/CD solution. There is an action for PR review that runs `linting`, `type checking` and `tests` and there is an action to facilitate production deployment.
+This app uses [GitHub Actions](https://docs.github.com/en/actions) as the CI/CD solution. There is an action for PR review that runs `linting`, `type checking` and `tests` and there is an action to facilitate production deployment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

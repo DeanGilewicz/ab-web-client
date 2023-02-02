@@ -13,7 +13,7 @@ const config: PlaywrightTestConfig = {
 		reuseExistingServer: true,
 		// timeout: 120 * 1000,
 	},
-	testDir: "src",
-	testMatch: "src/App.spec.ts",
+	testDir: "tests",
+	testMatch: "tests/App.spec.ts",
 };
 export default config;

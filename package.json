@@ -12,19 +12,21 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"test:coverage": "npm run test -- --coverage --watchAll=false",
 		"eject": "react-scripts eject",
+		"graphql-codegen": "graphql-codegen --config graphql-codegen.yml",
 		"graphql-download": "npm_config_yes=true npx -p @apollo/rover@0.1.10 rover graph introspect https://<example.com>/graphql > schema.graphql",
 		"graphql-download-local": "npm_config_yes=true npx -p @apollo/rover@0.1.10 rover graph introspect http://localhost:8080/graphql > schema.graphql",
-		"graphql-codegen": "graphql-codegen --config graphql-codegen.yml",
+		"lint": "eslint --ignore-path .gitignore .",
+		"playwright:e2e": "playwright test --config=./playwright.config.ts",
+		"playwright:e2e:watch": "playwright-watch exec npm run test:e2e",
+		"start": "react-scripts start",
 		"storybook": "start-storybook -p 6006 -s public",
-		"test-storybook:coverage": "test-storybook --coverage",
-		"build-storybook": "build-storybook -s public",
-		"test:e2e": "playwright test --config=./playwright.config.ts",
-		"test:e2e:watch": "playwright-watch exec npm run test:e2e"
+		"storybook:build": "build-storybook -s public",
+		"storybook:coverage": "test-storybook --coverage",
+		"test": "react-scripts test",
+		"test:coverage": "npm run test -- --coverage --watchAll=false",
+		"tsc": "tsc"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -105,6 +107,7 @@
 		"collectCoverageFrom": [
 			"src/App.tsx",
 			"src/components/**/*.{js,jsx,ts,tsx}",
+			"!src/components/**/*.stories.tsx",
 			"!<rootDir>/node_modules/"
 		],
 		"coverageThreshold": {

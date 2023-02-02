@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { pageWithGraphQlMocks, wait } from "./testUtils";
+import { pageWithGraphQlMocks } from "../src/testUtils";
 
 test("home page renders nav, header and footer", async ({ page }) => {
 	// Given we are on the home screen

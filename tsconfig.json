@@ -20,5 +20,5 @@
 			"src/*": ["src/*"]
 		}
 	},
-	"include": ["src", "src/hooks", "playwright.config.ts"]
+	"include": ["src", "src/hooks", "playwright.config.ts", "tests/App.spec.ts"]
 }
