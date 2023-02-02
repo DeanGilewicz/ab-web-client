@@ -1,0 +1,35 @@
+name: PR Preview
+
+on:
+  pull_request:
+    paths-ignore:
+      - ".github/**"
+      - ".vscode/**"
+
+jobs:
+  checks_and_tests:
+    name: Linting, Type Check and Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏁 Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: 🏁 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: 🏁 Install dependencies
+        run: npm install
+
+      - name: 👀 Check Linting
+        run: npm run lint
+
+      - name: 👀 Check TypeScript
+        if: ${{ success() }}
+        run: npm run tsc
+
+      - name: 👀 Check Tests
+        if: ${{ success() }}
+        run: npm run test:coverage
