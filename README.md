@@ -47,6 +47,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#cicd">CI/CD</a></li>
+    <li><a href="#deployment">Deployment</a></li>
   </ol>
 </details>
 
@@ -370,6 +371,18 @@ To ensure this app is connected to the correct env API add a `.env.local` file f
 ## CI/CD
 
 This app uses [GitHub Actions](https://docs.github.com/en/actions) as the CI/CD solution. There is an action for PR review that runs `linting`, `type checking` and `tests` and there is an action to facilitate production deployment.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Deployment
+
+This app is deployed to [Netlify](https://www.netlify.com). To set this up, a Github repository was created with existing committed code on `main` branch. After logging in to Netlify this repository was imported from Github. The Github account was authorized with Netlify to allow the repository to be selected and then then the app was deployed via deploy site button on Netlify dashboard.
+
+Once deployed, the Netlify `site id` and `personal access token` values were copied into the Github repo in `secrets and variables` actions for both `environment secrets` and `repository secrets` as `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID`.
+
+The `site id` was accessed by going to the site settings of this app that was deployed. The `personal access token` was accessed by going to `User settings > Applications > create a new personal access token`.
+
+The `REACT_APP_API_URL` environment variable was created in Netlify for this deployed project under `build and deploy` then `environment - environment variables` using the production value.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
