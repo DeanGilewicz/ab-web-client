@@ -382,7 +382,9 @@ Once deployed, the Netlify `site id` and `personal access token` values were cop
 
 The `site id` was accessed by going to the site settings of this app that was deployed. The `personal access token` was accessed by going to `User settings > Applications > create a new personal access token`.
 
-The `REACT_APP_API_URL` environment variable was created in Netlify for this deployed project under `build and deploy` then `environment - environment variables` using the production value.
+The `REACT_APP_API_URL` environment variable was created in Netlify for this deployed project under `site settings > environment variables` using the production value.
+
+Since this app uses `comment-on-commit`, the repo's `GITHUB_TOKEN` permissions needs to be updated from default to `read and write permissions`. This was achieved by logging into Github and going to `ab-web-client > settings > actions > general` then updating the `workflow permissions option` to read and write and saving.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
